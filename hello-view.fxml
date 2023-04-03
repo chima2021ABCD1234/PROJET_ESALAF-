@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.ButtonBar?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.control.TableColumn?>
+        <?import javafx.scene.control.TableView?>
+        <?import javafx.scene.control.TextField?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.VBox?>
+        <?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ma.fstt.esalaf.CustomerController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+  </padding>
+
+  <Label fx:id="welcomeText"/>
+  <Button text="Hello!" onAction="#onHelloButtonClick"/>
+</VBox>
+<AnchorPane prefHeight="574.0" prefWidth="937.0" styleClass="form_container" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.exemple.model.ClientController">
+<children>
+  <VBox layoutX="46.0" layoutY="160.0" prefHeight="300.0" prefWidth="300.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="110.0">
+    <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+      <TextField fx:id="tFName" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" />
+      <TextField fx:id="tLastName" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Credit" />
+      <TextField fx:id="tCredit" />
+    </children>
+  </VBox>
+  <TableView fx:id="table" layoutX="407.0" layoutY="130.0" onMouseClicked="#getData" prefHeight="274.0" prefWidth="510.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="120.0">
+    <columns>
+        <TableColumn fx:id="collName" prefWidth="148.800048828125" text="Prenom" />
+        <TableColumn fx:id="colCredit" prefWidth="126.39990234375" text="Credit" />
+        <TableColumn fx:id="colid_client" prefWidth="124.00000154972076" text="ID" />
+        <TableColumn fx:id="colfName" prefWidth="109.59996795654297" text="Nom" />
+
+    </columns>
+  </TableView>
+  <Label alignment="CENTER" layoutX="299.0" layoutY="32.0" prefHeight="35.0" prefWidth="338.0" styleClass="title" text="CLIENTS ET LEURS CREDIT" />
+  <ButtonBar layoutX="217.0" layoutY="444.0" prefHeight="46.0" prefWidth="522.0">
+    <buttons>
+        <Button fx:id="btnUpdate" layoutX="289.0" layoutY="22.0" mnemonicParsing="false" onAction="#updateClient" text="Modifier" />
+        <Button fx:id="btnDelete" layoutX="204.0" layoutY="22.0" mnemonicParsing="false" onAction="#deleteClient" text="Supprimer" />
+        <Button fx:id="btnSave" layoutX="375.0" layoutY="22.0" mnemonicParsing="false" onAction="#creatClient" prefHeight="35.0" prefWidth="245.0" text="Save" textFill="#ec0000" />
+        <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clearField" prefHeight="35.0" text="Vider" textFill="#cf1e1e" />
+    </buttons>
+  </ButtonBar>
+</children>
+</AnchorPane>
